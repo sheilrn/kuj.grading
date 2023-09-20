@@ -1,12 +1,12 @@
 body {
   min-height: 3000px;
   background-color: #ffffffff;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 footer {
   background-color: indigo;
   height: 85px;
-  font-family: 'Organika Serif';
+  font-family: "Organika Serif";
   font-size: 25px;
   color: #ffffff;
 }

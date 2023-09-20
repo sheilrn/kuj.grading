@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cheese Grading</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <!-- CSS -->
@@ -11,7 +10,6 @@
   </head>
   <body>
     <!-- password dulu -->
-    <!-- navbar -->
     <nav class="navbar" data-bs-theme="dark">
       <!-- Navbar content -->
       <div class="container">
@@ -29,34 +27,33 @@
             <h2>Cheese Grading</h2>
           </div>
         </div>
-
         <!-- LAYOUT -->
         <div class="row justify-content-center">
           <div class="col-md-16">
             <!-- nama -->
-            <form class="row g-2">
+            <form class="row g-2" method="post" action="https://script.google.com/macros/s/AKfycbxgOxVWT6BvA-evAWk9cQpE0AEH45Vcr7TDEhwUYDHlmfWOPdUm30xiGxJBAVSKCYbBHg/exec" name="contact-form">
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control" list="datalistOptions" id="nama" placeholder="Type to search..." required />
+                  <input type="text" class="form-control" list="datalistOptions" name="Nama" id="nama" placeholder="Ketik untuk mencari..." autocomplete="name" required />
                   <label for="nama">Nama</label>
                   <datalist id="datalistOptions">
                     <option value="Ilham"></option>
-                    <option value="Asih Suharsih"></option>
+                    <option value="Asih"></option>
                     <option value="Ilahi"></option>
                     <option value="Rani"></option>
                     <option value="Agus"></option>
                   </datalist>
-                  <div class="invalid-feedback">Required.</div>
+                  <div class="invalid-feedback">Wajib diisi.</div>
                 </div>
               </div>
               <!-- departemen -->
               <div class="col-md-6">
                 <div class="form-floating">
-                  <select class="form-select" id="department" required>
+                  <select class="form-select" name="Departemen" id="department" required>
                     <option selected disabled value>Choose...</option>
-                    <option value="1">MBD</option>
-                    <option value="2">QM</option>
-                    <option value="3">Production</option>
+                    <option value="MBD">MBD</option>
+                    <option value="QM">QM</option>
+                    <option value="RND">RND</option>
                   </select>
                   <div class="invalid-feedback">Required.</div>
                   <label for="department">Departemen</label>
@@ -65,23 +62,26 @@
               <!-- tanggal -->
               <div class="col-md-6">
                 <label for="tanggalgrading" class="form-label">Tanggal Grading</label>
-                <input type="date" class="form-control" id="tanggalgrading" placeholder="DD/MM/YYYY" required />
+                <input type="date" name="TanggalGrading" class="form-control" id="tanggalgrading" required />
                 <div class="invalid-feedback">Required.</div>
               </div>
               <div class="col-md-6">
-                <label for="tanggapproduksi" class="form-label">Tanggal Produksi</label>
-                <input type="date" class="form-control" id="tanggalproduksi" placeholder="DD/MM/YYYY" required />
+                <label for="tanggalproduksi" class="form-label">Tanggal Produksi</label>
+                <input type="date" class="form-control" name="TanggalProduksi" id="tanggalproduksi" required />
                 <div class="invalid-feedback">Required.</div>
               </div>
               <!-- SKU1 -->
               <div id="form1">
                 <div class="col-12">
                   <label for="SKU" class="form-label">SKU 1</label>
-                  <select id="SKU" class="form-select" required>
-                    <option>Choose...</option>
-                    <option value="1">FILLING CHEESE L4</option>
-                    <option value="2">KRAFT CHEDDAR 48X160 GR</option>
-                    <option value="3">QM Mozza 165gr L3</option>
+                  <select id="SKU" class="form-select" name="SKU1" required>
+                    <option value="" disabled selected>Choose...</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
                   </select>
                   <div class="invalid-feedback">Required.</div>
                 </div>
@@ -115,66 +115,66 @@
                       <tr>
                         <!-- baris 1 -->
                         <th scope="row">Begin</th>
-                        <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                        <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                        <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                        <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                        <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                        <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                        <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                        <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                        <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                        <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                        <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                        <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                        <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                        <td><input type="number" class="form-control" name="Kode" /></td>
+                        <td><input type="number" class="form-control" name="Jam" /></td>
+                        <td><input type="number" class="form-control" name="Body" required /></td>
+                        <td><input type="number" class="form-control" name="Appearance" required /></td>
+                        <td><input type="number" class="form-control" name="Consistency" required /></td>
+                        <td><input type="number" class="form-control" name="Sliceability" required /></td>
+                        <td><input type="number" class="form-control" name="GratingMelting" required /></td>
+                        <td><input type="number" class="form-control" name="Mouthfeel" required /></td>
+                        <td><input type="number" class="form-control" name="Flavor" required /></td>
+                        <td><input type="number" class="form-control" name="Saltiness" required /></td>
+                        <td><input type="number" class="form-control" name="CheeseFlavor" required /></td>
+                        <td><input type="number" class="form-control" name="General" required /></td>
+                        <td><input type="number" class="form-control" name="Color" required /></td>
                         <td>
                           <div>
-                            <textarea class="form-control" id="remarks"></textarea>
+                            <textarea class="form-control" name="Remarks"></textarea>
                           </div>
                         </td>
                       </tr>
                       <!-- baris 2 -->
                       <tr>
                         <th scope="row">Mid</th>
-                        <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                        <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                        <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                        <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                        <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                        <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                        <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                        <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                        <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                        <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                        <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                        <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                        <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                        <td><input type="number" class="form-control" name="Kode" /></td>
+                        <td><input type="number" class="form-control" name="Jam" /></td>
+                        <td><input type="number" class="form-control" name="Body" required /></td>
+                        <td><input type="number" class="form-control" name="Appearance" required /></td>
+                        <td><input type="number" class="form-control" name="Consistency" required /></td>
+                        <td><input type="number" class="form-control" name="Sliceability" required /></td>
+                        <td><input type="number" class="form-control" name="GratingMelting" required /></td>
+                        <td><input type="number" class="form-control" name="Mouthfeel" required /></td>
+                        <td><input type="number" class="form-control" name="Flavor" required /></td>
+                        <td><input type="number" class="form-control" name="Saltiness" required /></td>
+                        <td><input type="number" class="form-control" name="CheeseFlavor" required /></td>
+                        <td><input type="number" class="form-control" name="General" required /></td>
+                        <td><input type="number" class="form-control" name="Color" required /></td>
                         <td>
                           <div>
-                            <textarea class="form-control" id="remarks"></textarea>
+                            <textarea class="form-control" name="Remarks"></textarea>
                           </div>
                         </td>
                       </tr>
                       <!-- baris 3 -->
                       <tr>
                         <th scope="row">End</th>
-                        <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                        <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                        <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                        <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                        <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                        <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                        <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                        <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                        <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                        <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                        <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                        <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                        <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                        <td><input type="number" class="form-control" name="Kode" /></td>
+                        <td><input type="number" class="form-control" name="Jam" /></td>
+                        <td><input type="number" class="form-control" name="Body" required /></td>
+                        <td><input type="number" class="form-control" name="Appearance" required /></td>
+                        <td><input type="number" class="form-control" name="Consistency" required /></td>
+                        <td><input type="number" class="form-control" name="Sliceability" required /></td>
+                        <td><input type="number" class="form-control" name="GratingMelting" required /></td>
+                        <td><input type="number" class="form-control" name="Mouthfeel" required /></td>
+                        <td><input type="number" class="form-control" name="Flavor" required /></td>
+                        <td><input type="number" class="form-control" name="Saltiness" required /></td>
+                        <td><input type="number" class="form-control" name="CheeseFlavor" required /></td>
+                        <td><input type="number" class="form-control" name="General" required /></td>
+                        <td><input type="number" class="form-control" name="Color" required /></td>
                         <td>
                           <div>
-                            <textarea class="form-control" id="remarks"></textarea>
+                            <textarea class="form-control" name="Remarks"></textarea>
                           </div>
                         </td>
                       </tr>
@@ -182,16 +182,18 @@
                   </table>
                 </div>
               </div>
-
               <!-- SKU2 -->
               <div id="form3">
                 <div class="col-12">
                   <label for="SKU2" class="form-label">SKU 2</label>
-                  <select id="SKU2" class="form-select">
+                  <select id="SKU2" name="SKU" class="form-select">
                     <option>Choose...</option>
-                    <option value="1">FILLING CHEESE L4</option>
-                    <option value="2">KRAFT CHEDDAR 48X160 GR</option>
-                    <option value="3">QM Mozza 165gr L3</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
                   </select>
                 </div>
               </div>
@@ -224,66 +226,66 @@
                         <tr>
                           <!-- baris 1 -->
                           <th scope="row">Begin</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
                         <!-- baris 2 -->
                         <tr>
                           <th scope="row">Mid</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
                         <!-- baris 3 -->
                         <tr>
                           <th scope="row">End</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
@@ -296,11 +298,14 @@
               <div id="form5">
                 <div class="col-12">
                   <label for="SKU3" class="form-label">SKU 3</label>
-                  <select id="SKU3" class="form-select">
+                  <select id="SKU3" name="SKU" class="form-select">
                     <option selected>Choose...</option>
-                    <option value="1">FILLING CHEESE L4</option>
-                    <option value="2">KRAFT CHEDDAR 48X160 GR</option>
-                    <option value="3">QM Mozza 165gr L3</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
                   </select>
                 </div>
               </div>
@@ -333,66 +338,66 @@
                         <tr>
                           <!-- baris 1 -->
                           <th scope="row">Begin</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
                         <!-- baris 2 -->
                         <tr>
                           <th scope="row">Mid</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
                         <!-- baris 3 -->
                         <tr>
                           <th scope="row">End</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
@@ -405,11 +410,14 @@
               <div id="form7">
                 <div class="col-12">
                   <label for="SKU4" class="form-label">SKU 4</label>
-                  <select id="SKU4" class="form-select">
+                  <select id="SKU4" name="SKU" class="form-select">
                     <option>Choose...</option>
-                    <option value="1">FILLING CHEESE L4</option>
-                    <option value="2">KRAFT CHEDDAR 48X160 GR</option>
-                    <option value="3">QM Mozza 165gr L3</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
                   </select>
                 </div>
               </div>
@@ -442,66 +450,66 @@
                         <tr>
                           <!-- baris 1 -->
                           <th scope="row">Begin</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
                         <!-- baris 2 -->
                         <tr>
                           <th scope="row">Mid</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
                         <!-- baris 3 -->
                         <tr>
                           <th scope="row">End</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
@@ -514,11 +522,14 @@
               <div id="form9">
                 <div class="col-12">
                   <label for="SKU5" class="form-label">SKU 5</label>
-                  <select id="SKU5" class="form-select">
+                  <select id="SKU5" name="SKU" class="form-select">
                     <option>Choose...</option>
-                    <option value="1">FILLING CHEESE L4</option>
-                    <option value="2">KRAFT CHEDDAR 48X160 GR</option>
-                    <option value="3">QM Mozza 165gr L3</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
                   </select>
                 </div>
               </div>
@@ -551,66 +562,66 @@
                         <tr>
                           <!-- baris 1 -->
                           <th scope="row">Begin</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
                         <!-- baris 2 -->
                         <tr>
                           <th scope="row">Mid</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
                         <!-- baris 3 -->
                         <tr>
                           <th scope="row">End</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
@@ -623,11 +634,14 @@
               <div id="form11">
                 <div class="col-12">
                   <label for="SKU6" class="form-label">SKU 6</label>
-                  <select id="SKU6" class="form-select">
-                    <option>Choose...</option>
-                    <option value="1">FILLING CHEESE L4</option>
-                    <option value="2">KRAFT CHEDDAR 48X160 GR</option>
-                    <option value="3">QM Mozza 165gr L3</option>
+                  <select id="SKU6" name="SKU" class="form-select">
+                    <option selected disabled value>Choose...</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
                   </select>
                 </div>
               </div>
@@ -660,66 +674,66 @@
                         <tr>
                           <!-- baris 1 -->
                           <th scope="row">Begin</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
                         <!-- baris 2 -->
                         <tr>
                           <th scope="row">Mid</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
                         <!-- baris 3 -->
                         <tr>
                           <th scope="row">End</th>
-                          <td><input type="number" class="form-control" id="kode" name="Kode" /></td>
-                          <td><input type="number" class="form-control" id="Jam" name="Jam" /></td>
-                          <td><input type="number" class="form-control" id="Body" name="Body" required /></td>
-                          <td><input type="number" class="form-control" id="Appearance" name="Appearance" required /></td>
-                          <td><input type="number" class="form-control" id="Consistency" name="Consistency" required /></td>
-                          <td><input type="number" class="form-control" id="Sliceability" name="Sliceability" required /></td>
-                          <td><input type="number" class="form-control" id="Grating/Melting" name="Grating/Melting" required /></td>
-                          <td><input type="number" class="form-control" id="Mouthfeel" name="Mouthfeel" required /></td>
-                          <td><input type="number" class="form-control" id="Flavor" name="Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="Saltiness" name="Saltiness" required /></td>
-                          <td><input type="number" class="form-control" id="CheeseFlavor" name="Cheese Flavor" required /></td>
-                          <td><input type="number" class="form-control" id="General" name="General" required /></td>
-                          <td><input type="number" class="form-control" id="Color" name="Color" required /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
                           <td>
                             <div>
-                              <textarea class="form-control" id="remarks" name="Remarks"></textarea>
+                              <textarea class="form-control"></textarea>
                             </div>
                           </td>
                         </tr>
@@ -728,6 +742,7 @@
                   </div>
                 </div>
               </div>
+
               <script>
                 // Dapatkan elemen-elemen kontainer
                 var container1 = document.getElementById("form1");
@@ -753,94 +768,131 @@
                 SKU.addEventListener("input", function () {
                   if (SKU.value.trim() !== "") {
                     container2.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container2);
                   } else {
                     container2.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container2);
                   }
                 });
                 SKU.addEventListener("change", function () {
                   if (SKU.value === "Choose...") {
                     container2.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container2);
                   } else {
                     container2.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container2);
                   }
                 });
                 // Tambahkan event listener pada elemen input ketiga
                 SKU2.addEventListener("input", function () {
                   if (SKU2.value.trim() !== "") {
                     container4.style.display = "block"; // Tampilkan elemen keempat
+                    makeFormRequired(container4);
                   } else {
                     container4.style.display = "none"; // Sembunyikan elemen keempat
+                    makeFormNotRequired(container4);
                   }
                 });
                 SKU2.addEventListener("change", function () {
                   if (SKU2.value === "Choose...") {
                     container4.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container4);
                   } else {
                     container4.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container4);
                   }
                 });
                 // Tambahkan event listener pada elemen input ketiga
                 SKU3.addEventListener("input", function () {
                   if (SKU3.value.trim() !== "") {
                     container6.style.display = "block"; // Tampilkan elemen keempat
+                    makeFormRequired(container6);
                   } else {
                     container6.style.display = "none"; // Sembunyikan elemen keempat
+                    makeFormNotRequired(container6);
                   }
                 });
                 SKU3.addEventListener("change", function () {
                   if (SKU3.value === "Choose...") {
                     container6.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container6);
                   } else {
                     container6.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container6);
                   }
                 });
                 SKU4.addEventListener("input", function () {
                   if (SKU4.value.trim() !== "") {
                     container8.style.display = "block"; // Tampilkan elemen keempat
+                    makeFormRequired(container8);
                   } else {
                     container8.style.display = "none"; // Sembunyikan elemen keempat
+                    makeFormNotRequired(container8);
                   }
                 });
                 SKU4.addEventListener("change", function () {
                   if (SKU4.value === "Choose...") {
                     container8.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container8);
                   } else {
                     container8.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container8);
                   }
                 });
                 SKU5.addEventListener("input", function () {
                   if (SKU5.value.trim() !== "") {
                     container10.style.display = "block"; // Tampilkan elemen keempat
+                    makeFormRequired(container10);
                   } else {
                     container10.style.display = "none"; // Sembunyikan elemen keempat
+                    makeFormNotRequired(container10);
                   }
                 });
                 SKU5.addEventListener("change", function () {
                   if (SKU5.value === "Choose...") {
                     container10.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container10);
                   } else {
                     container10.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container10);
                   }
                 });
                 SKU6.addEventListener("input", function () {
                   if (SKU6.value.trim() !== "") {
                     container12.style.display = "block"; // Tampilkan elemen keempat
+                    makeFormRequired(container12);
                   } else {
                     container12.style.display = "none"; // Sembunyikan elemen keempat
+                    makeFormNotRequired(container12);
                   }
                 });
                 SKU6.addEventListener("change", function () {
                   if (SKU6.value === "Choose...") {
                     container12.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container12);
                   } else {
                     container12.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container12);
                   }
                 });
+                function makeFormRequired(container) {
+                  const formElements = container.querySelectorAll("input, select, textarea");
+                  formElements.forEach(function (element) {
+                    element.required = true;
+                  });
+                }
+                function makeFormNotRequired(container) {
+                  const formElements = container.querySelectorAll("input, select, textarea");
+                  formElements.forEach(function (element) {
+                    element.required = false;
+                  });
+                }
               </script>
+
               <!-- submit -->
               <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary btn-danger" type="reset">Reset</button>
-                <button class="btn btn-primary me-md-2" type="submit">Submit</button>
+                <button class="btn btn-primary btn-danger btn-reset" type="reset">Reset</button>
+                <button class="btn btn-primary btn-submit me-md-2" type="submit">Submit</button>
               </div>
             </form>
           </div>
@@ -852,6 +904,8 @@
       <p class="text-center p-4">SNACKING MADE RIGHT</p>
       <link href="https://db.onlinewebfonts.com/c/005e09ad55e3c9e5b992d770e254854f?family=Organika+Serif" rel="stylesheet" />
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="sheet.js"></script>
   </body>
 </html>
